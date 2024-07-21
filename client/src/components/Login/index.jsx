@@ -15,7 +15,6 @@ const Login = () => {
     e.preventDefault();
     try {
       const url =
-        "http://localhost:8000/api/auth" ||
         "https://authinmern-1-26ta.onrender.com/api/auth";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("token", res.data);

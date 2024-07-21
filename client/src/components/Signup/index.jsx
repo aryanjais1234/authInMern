@@ -21,7 +21,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const url =
-        "http://localhost:8000/api/users || https://authinmern-1-26ta.onrender.com/api/users";
+        "https://authinmern-1-26ta.onrender.com/api/users";
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
