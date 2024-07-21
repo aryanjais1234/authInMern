@@ -31,7 +31,7 @@ const Signup = () => {
         error.response.status <= 500
       ) {
         setError(error.response.data.message);
-        alert(error);
+        alert(error.details[0].message);
       }
     }
   };
