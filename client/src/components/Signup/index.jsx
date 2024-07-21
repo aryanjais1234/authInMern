@@ -24,6 +24,7 @@ const Signup = () => {
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
+      setError(res.message);
     } catch (error) {
       if (
         error.response &&
@@ -31,10 +32,6 @@ const Signup = () => {
         error.response.status <= 500
       ) {
         setError(error.response.data.message);
-      }
-      if(error.response.status === 400){
-        setError("Password should be at least 8 characters long, 1 Uppercase, 1 special Character, 1 Lowercase, and 1 Number");
-        // alert("Password should be at least 8 characters long, 1 Uppercase, 1 special Character, 1 Lowercase, and 1 Number");
       }
     }
   };
