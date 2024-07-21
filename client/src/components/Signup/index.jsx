@@ -31,7 +31,10 @@ const Signup = () => {
         error.response.status <= 500
       ) {
         setError(error.response.data.message);
-        alert(error.details[0].message);
+      }
+      if(error.response.status === 400){
+        setError("Password should be at least 8 characters long, 1 Uppercase, 1 special Character, 1 Lowercase, and 1 Number");
+        // alert("Password should be at least 8 characters long, 1 Uppercase, 1 special Character, 1 Lowercase, and 1 Number");
       }
     }
   };
